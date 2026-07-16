@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 Documentation / Documentação
+# Documentation / Documentação
 
 </div>
 
@@ -20,7 +20,7 @@ The project integrates Unity, a Python REST API, and a large-scale language mode
 
 ---
 
-## 🚀 System Overview
+## System Overview
 
 The project is divided into three components:
 
@@ -47,7 +47,7 @@ Used to:
 
 ---
 
-## 🧩 System Architecture
+## System Architecture
 
 General workflow:
 
@@ -60,7 +60,7 @@ General workflow:
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 ### **Unity**
 - C#
@@ -78,7 +78,7 @@ General workflow:
 
 ---
 
-## 🎮 Features
+## Features
 
 ### **Procedural Dungeon Layout**
 The dungeon map is assembled dynamically.  
@@ -104,28 +104,6 @@ Entering a new room may trigger:
 ### **Dialogue System**
 Player inputs are sent to the API, and the LLM returns responses consistent with the current game state.
 
----
-
-## 🧪 Running the Project
-
-### **Unity**
-1. Open the `Unity/` folder in Unity Hub.
-2. Load the **MainMenu** scene.
-3. Press **Play**.
-
-### **Python API**
-
-Install dependencies:
-```bash
-  pip install -r requirements.txt
-```
-
-Run the API
-
-```bash
-  flask run
-```
-
 </details>
 
 ---
@@ -144,7 +122,7 @@ O projeto integra Unity, uma API REST em Python e um modelo de linguagem de larg
 
 ---
 
-## 🚀 Visão Geral do Sistema
+## Visão Geral do Sistema
 
 O projeto é estruturado em três principais componentes:
 
@@ -171,7 +149,7 @@ Utilizado para:
 
 ---
 
-## 🧩 Arquitetura do Sistema
+## Arquitetura do Sistema
 
 Fluxo geral:
 
@@ -184,7 +162,7 @@ Fluxo geral:
 
 ---
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 ### **Unity**
 - C#
@@ -202,7 +180,7 @@ Fluxo geral:
 
 ---
 
-## 🎮 Funcionalidades
+## Funcionalidades
 
 ### **Layout de Masmorra Procedural**
 A masmorra é montada dinamicamente usando:
@@ -226,28 +204,5 @@ Ao entrar em uma nova sala, podem ocorrer:
 
 ### **Sistema de Diálogo**
 As entradas do jogador são enviadas para a API, e o LLM retorna respostas consistentes com o estado atual do jogo.
-
----
-
-## 🧪 Executando o Projeto
-
-### **Unity**
-1. Abra a pasta `Unity/` pelo Unity Hub.
-2. Carregue a cena **MainMenu**.
-3. Pressione **Play**.
-
-### **API Python**
-
-Instale as dependências:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the API
-
-```bash
-  flask run
-```
 
 </details>

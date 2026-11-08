@@ -1,12 +1,13 @@
 ﻿import json
-from openai import OpenAI
 
+from app.core.openai_client import get_openai_client
 from app.utils.schema_util import load_json_schema
 from app.utils.context_helper import save_context, summarize_context
 
-client = OpenAI()
 
 def generate_arc(selected_model: str, last_action: str, current_arc: int, is_ending: bool):
+    client = get_openai_client()
+
     summarize_context(client)
     context = summarize_context(client)
     arc_system = "You are an imaginative worldbuilder Dungeon Master for a fantasy game."

@@ -1,12 +1,13 @@
 import json
-from openai import OpenAI
 
+from app.core.openai_client import get_openai_client
 from app.utils.schema_util import load_json_schema
 from app.utils.context_helper import save_context
 
-client = OpenAI()
 
 def generate_main_story(selected_model: str, type: str, name: str, character_history: str, context: str):
+    client = get_openai_client()
+    
     main_story_system = "You are an imaginative worldbuilder Dungeon Master for a fantasy game."
     main_story_user = f"""
                         Generate a creative and immersive introductory story about {type} called {name}, whose adventure is just beginning. 

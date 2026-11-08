@@ -1,8 +1,9 @@
-from openai import OpenAI
+from app.core.openai_client import get_openai_client
 
-client = OpenAI()
 
 def generate_image(image_context: str):
+    client = get_openai_client()
+    
     response = client.images.generate(
         model="gpt-image-1-mini",
         prompt=f"A pixelated image about: {image_context}",

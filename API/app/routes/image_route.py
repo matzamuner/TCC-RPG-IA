@@ -1,11 +1,12 @@
-from flask import Blueprint, request, jsonify
+from fastapi import APIRouter
+
+from app.data.requests.image_request import ImageRequest
 from app.services.image_service import generate_image
 
-image_blueprint = Blueprint("image", __name__)
+image_router = APIRouter()
 
-@image_blueprint.route("/", methods=["POST"])
-def get_image():
-    data = request.get_json()
-    image_context = data.get("imageContext")
-    image_b64 = generate_image(image_context)
-    return jsonify({"imageBase64": image_b64})
+
+@image_router.post("/")
+def image(request: ImageRequest):
+    image_b64 = generate_image(request.image_context)
+    return {"imageBase64": image_b64}

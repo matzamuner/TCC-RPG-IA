@@ -1,13 +1,13 @@
 import json
-from openai import OpenAI
 
+from app.core.openai_client import get_openai_client
 from app.utils.schema_util import load_json_schema
 from app.utils.context_helper import save_context, load_context
 
-client = OpenAI()
 
-
-def generate_story(selected_model: str, choice):
+def generate_story(selected_model: str, choice: str):
+    client = get_openai_client()
+    
     context = load_context("context.txt")
     story_system = "You are an imaginative Dungeon Master."
     story_user = f"""

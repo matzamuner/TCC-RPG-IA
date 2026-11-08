@@ -1,11 +1,12 @@
 import json
-from openai import OpenAI
 
+from app.core.openai_client import get_openai_client
 from app.utils.schema_util import load_json_schema
 
-client = OpenAI()
 
 def generate_item(selected_model: str, character: str, item_type: str):
+    client = get_openai_client()
+    
     item_system = "You are an imaginative Dungeon Master."
     item_user = f"""
         Generate a {item_type} that would naturally be dropped by the following character: {character}.

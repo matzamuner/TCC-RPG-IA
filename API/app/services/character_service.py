@@ -1,13 +1,12 @@
 import json
 
-from openai import OpenAI
-
+from app.core.openai_client import get_openai_client
 from app.utils.schema_util import load_json_schema
-
-client = OpenAI()
 
 
 def generate_character(selected_model: str, level: int, context: str):
+    client = get_openai_client()
+    
     character_system = "You are an imaginative Dungeon Master."
     character_user = f"""
                         Generate a creative character sheet for a level {level} character based on the following context: {context}.

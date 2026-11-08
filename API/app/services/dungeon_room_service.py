@@ -1,11 +1,12 @@
 import json
 
-from openai import OpenAI
+from app.core.openai_client import get_openai_client
 from app.utils.schema_util import load_json_schema
 
-client = OpenAI()
 
 def generate_dungeon_room(selected_model: str, context: str):
+    client = get_openai_client()
+    
     dungeon_room_system = "You are an imaginative Dungeon Master."
     dungeon_room_user = f"""
     Generate a dungeon room based on: {context}.

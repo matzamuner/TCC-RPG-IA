@@ -1,13 +1,15 @@
-from flask import Blueprint, request, jsonify
+from fastapi import APIRouter
+
+from app.data.requests.character_request import CharacterRequest
 from app.services.character_service import generate_character
 
-character_blueprint = Blueprint("character", __name__)
+character_router = APIRouter()
 
-@character_blueprint.route("/", methods=["POST"])
-def character():
-    data = request.get_json()
-    selected_model = data.get("selectedModel")
-    level = data.get("level")
-    context = data.get("context")
-    character = generate_character(selected_model ,level, context)
-    return jsonify(character)
+
+@character_router.post("/")
+def character(request: CharacterRequest):
+    return generate_character(
+        request.selected_model,
+        request.level,
+        request.context,
+    )
